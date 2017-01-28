@@ -52,6 +52,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             m_JumpPower = whatevs;
         }
 
+        public bool AmIGrounded()
+        {
+            return m_IsGrounded;
+        }
+
 
 		public void Move(Vector3 move, bool crouch, bool jump)
 		{
