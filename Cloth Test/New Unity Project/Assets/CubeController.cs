@@ -7,7 +7,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     public class CubeController : MonoBehaviour
     {
         [SerializeField]
-        GameObject LittleCube;
+        public GameObject LittleCube;
 
         [SerializeField]
         GameObject StartFollowingMe;
