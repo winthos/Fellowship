@@ -21,7 +21,7 @@ public class SteamRoller : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-	
+        maincamera = GameObject.Find("Main Camera").GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
