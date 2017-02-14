@@ -71,7 +71,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     FaceSprite.GetComponent<SpriteRenderer>().sprite = SadFace;
 
                 else
-                    FaceSprite.GetComponent<SpriteRenderer>().sprite = HappyFace;
+                {
+                    if(gameObject.name != "FullCube(Clone)")
+                    {
+                        FaceSprite.GetComponent<SpriteRenderer>().sprite = HappyFace;
+                    }
+
+                    if(gameObject.name =="FullCube(Clone)")
+                    {
+                        FaceSprite.GetComponent<SpriteRenderer>().sprite = HomeFace;
+                    }
+                }
             }
 
             //following player so i'm happy
@@ -98,6 +108,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             //idle stand still, be sad and or hungry
             if (gameObject.GetComponent<Rigidbody>().isKinematic == true && dontchangesprites == false)
             {
+                print("SHouldBe Hungry");
                 if(PlayerMetMe == true)
                 FaceSprite.GetComponent<SpriteRenderer>().sprite = HungryFace;
                 Idle = false;

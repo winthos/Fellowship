@@ -6,6 +6,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
     public class VictoryToggle : MonoBehaviour
     {
+        public bool IamHere = false;
+
+        public GameObject BuddyVictory;
 
         // Use this for initialization
         void Start()
@@ -21,10 +24,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         void OnTriggerEnter(Collider super)
         {
-            if (super.name == "SquishyCubeCharacter")
+            IamHere = true;
+            if (super.name == "SquishyCubeCharacter" && BuddyVictory.GetComponent<BuddyVictoryToggle>().IamHere == true)
             {
                 super.GetComponent<CubeController>().VictoryJump = true;
             }
+        }
+
+        void OnTriggerExit(Collider super)
+        {
+            IamHere = false;
         }
     }
 }

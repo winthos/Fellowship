@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AICharacterControl.cs" />
+     <Compile Include="Assets\Scripts\BuddyVictoryToggle.cs" />
      <Compile Include="Assets\Scripts\CubeController.cs" />
+     <Compile Include="Assets\Scripts\EscapeToQuit.cs" />
      <Compile Include="Assets\Scripts\LookAtMeWhenImTalkingToYou.cs" />
      <Compile Include="Assets\Scripts\SlimeFoodController.cs" />
      <Compile Include="Assets\Scripts\SteamRoller.cs" />
