@@ -9,6 +9,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public bool IamHere = false;
 
         public GameObject BuddyVictory;
+        public GameObject MyLight;
 
         // Use this for initialization
         void Start()
@@ -24,16 +25,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         void OnTriggerEnter(Collider super)
         {
+            MyLight.GetComponent<Light>().enabled = true;
             IamHere = true;
             if (super.name == "SquishyCubeCharacter" && BuddyVictory.GetComponent<BuddyVictoryToggle>().IamHere == true)
             {
+                MyLight.GetComponent<Light>().enabled = true;
                 super.GetComponent<CubeController>().VictoryJump = true;
             }
         }
 
         void OnTriggerExit(Collider super)
         {
-            IamHere = false;
+            if (super.name == "SquishyCubeCharacter")
+            {
+                IamHere = false;
+                MyLight.GetComponent<Light>().enabled = false;
+            }
         }
     }
 }
